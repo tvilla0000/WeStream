@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*-- NavBar --*/
+.NavBar {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+
+.NavBar-link {
+  margin: 0 10px;
+}
+
+/*-- SignupPage --*/
+.SignupPage {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/*-- LoginPage --*/
+.LoginPage {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
