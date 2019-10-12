@@ -12,15 +12,38 @@ code {
     monospace;
 }
 
+a {
+  color: white;
+}
+
 /*-- NavBar --*/
 .NavBar {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   margin: 0 0 20px;
+  background-color: rgb(30, 29, 29);
+  height: 10vh;
 }
 
 .NavBar-link {
   margin: 0 10px;
+}
+
+.NavBar-welcome {
+  color: grey;
+}
+
+.nav {
+  display: flex;
+  justify-content: baseline;
+}
+
+/*-- SearchBar --*/
+button {
+  width: 50px;
+  height: 18px;
+  margin-top: 10px;
 }
 
 /*-- SignupPage --*/
