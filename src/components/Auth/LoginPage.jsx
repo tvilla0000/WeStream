@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import userService from "../../utils/userService";
 
 class LoginPage extends Component {
   state = {
@@ -8,11 +9,19 @@ class LoginPage extends Component {
   };
 
   handleChange = e => {
-    // TODO: implement in an elegant way
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
+    try {
+      await userService.login(this.state);
+      this.props.history.push("/");
+
+      this.props.handleSignupOrLogin();
+    } catch (err) {
+      alert("Invalid Credentials");
+    }
   };
 
   render() {
@@ -48,7 +57,9 @@ class LoginPage extends Component {
             <div className="col-sm-12 text-center">
               <button className="btn btn-default">Log In</button>
               &nbsp;&nbsp;&nbsp;
-              <Link to="/">Cancel</Link>
+              <Link to="/" className="cancel">
+                Cancel
+              </Link>
             </div>
           </div>
         </form>

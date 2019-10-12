@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginPage from "./components/Auth/LoginPage";
 import SignupPage from "./components/Auth/SignupPage";
 import userService from "./utils/userService";
+import SearchBar from "./components/Main Components/SearchBar";
 import youtube from "./APIs/youtube";
 
 class App extends Component {
@@ -37,7 +38,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar user={this.state.user} handleFormSubmit={this.handleSubmit} />
+        <NavBar user={this.state.user} />
+        <SearchBar handleFormSubmit={this.handleSubmit} />
         <Route
           exact
           path="/signup"
