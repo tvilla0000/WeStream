@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/Main Components/NavBar";
 import { Route, Switch } from "react-router-dom";
 import LoginPage from "./components/Auth/LoginPage";
 import SignupPage from "./components/Auth/SignupPage";
 import userService from "./utils/userService";
-import SearchBar from "./components/Main Components/SearchBar";
+import VideoList from "./components/Main Components/VideoList";
 import youtube from "./APIs/youtube";
 
 class App extends Component {
@@ -20,10 +19,10 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   };
 
-  handleSubmit = async searchBarTerm => {
+  handleFormSubmit = async termFromSearchBar => {
     const response = await youtube.get("/search", {
       params: {
-        q: searchBarTerm
+        q: termFromSearchBar
       }
     });
     this.setState({
@@ -38,8 +37,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar user={this.state.user} />
-        <SearchBar handleFormSubmit={this.handleSubmit} />
+        <NavBar
+          user={this.state.user}
+          handleFormSubmit={this.handleFormSubmit}
+        />
+
+        <div>
+          <VideoList
+            handleSelVideo={this.handleSelVideo}
+            videos={this.state.videos}
+          />
+        </div>
         <Route
           exact
           path="/signup"
