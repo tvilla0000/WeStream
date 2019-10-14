@@ -11,25 +11,27 @@ class SearchBar extends Component {
     });
   };
   handleSubmit(e) {
-    e.preventDefault();
-    this.props.handleFormSubmit(this.state.term);
-    console.log(this.state.term);
+    console.log("hi");
   }
 
   render() {
-    console.log(this.props.handleFormSubmit);
     return (
       <div className="Search">
         <form className="ui-form">
-          <div className="field">
-            <label htmlFor="video-search">Video Search</label>
-            <input
-              onChange={this.handleChange}
-              name="video-search"
-              type="text"
-              value={this.state.term}
-            ></input>
-            <button onClick={this.handleSubmit}>Search</button>
+          <div id="container">
+            <div className="field">
+              <input
+                onChange={this.handleChange}
+                name="video-search"
+                type="text"
+                value={this.state.term}
+                id="searchbar"
+                placeholder="Search..."
+              ></input>
+              <button onSubmit={this.handleSubmit} id="submit">
+                Search
+              </button>
+            </div>
           </div>
         </form>
       </div>

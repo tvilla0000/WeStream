@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(29, 29, 29);
 }
 
 code {
@@ -17,14 +18,14 @@ a {
 }
 
 /*-- NavBar --*/
-.NavBar {
+/* .NavBar {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
   margin: 0 0 20px;
   background-color: rgb(30, 29, 29);
-  height: 10vh;
-}
+  height: 6vh;
+} */
 
 .NavBar-link {
   margin: 0 10px;
@@ -35,18 +36,68 @@ a {
 }
 
 .nav {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: baseline; */
+  background-color: rgb(36, 36, 36);
+  padding: 10px;
+  position: relative;
+  height: 5vh;
+}
+.auth {
+  width: 8vw;
+  position: absolute;
+  right: 10px;
+  top: 33px;
+}
+
+#brand {
+  color: white;
+  font-size: 20px;
   display: flex;
-  justify-content: baseline;
+  align-items: center;
+  width: 40px;
+  margin: 10px 0 0 0;
+  position: absolute;
+  left: 80px;
 }
 
 /*-- SearchBar --*/
-button {
-  width: 50px;
-  height: 18px;
-  margin-top: 10px;
+.Search {
+  position: absolute;
+  left: 32.5%;
+  top: 20px;
+}
+
+#searchbar {
+  width: 30vw;
+  height: 20px;
+  background-color: rgb(19, 19, 19);
+  border: 0.125px solid rgb(42, 42, 42);
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#submit {
+  height: 40px;
+  border: 0.125px solid rgb(42, 42, 42);
+  background-color: rgb(57, 57, 57);
+  border-left: none;
+  color: white;
+  font-size: 15px;
+  padding: 5px;
+  width: 4vw;
+}
+
+.field {
+  display: flex;
+  align-items: center;
 }
 
 /*-- SignupPage --*/
+
 .SignupPage {
   display: flex;
   flex-flow: column nowrap;
