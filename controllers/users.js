@@ -4,7 +4,8 @@ const SECRET = process.env.SECRET;
 
 module.exports = {
   signup,
-  login
+  login,
+  index
 };
 
 async function signup(req, res) {
@@ -17,6 +18,11 @@ async function signup(req, res) {
     // Probably a duplicate email
     res.status(400).json(err);
   }
+}
+
+function index(req, res) {
+  const users = User.find({});
+  return res.json(res => res.json(`${users}`));
 }
 
 async function login(req, res) {
