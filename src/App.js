@@ -6,32 +6,38 @@ import LoginPage from "./components/Auth/LoginPage";
 import SignupPage from "./components/Auth/SignupPage";
 import userService from "./utils/userService";
 import VideoList from "./components/Main Components/VideoList";
-import youtube from "./APIs/youtube";
+import videoService from "./utils/videoService";
 
 class App extends Component {
   state = {
     user: userService.getUser(),
     videos: [],
-    selVideo: null
+    term: ""
+  };
+
+  handleChange = e => {
+    this.setState({
+      term: e.target.value
+    });
   };
 
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
   };
 
-  handleFormSubmit = async termFromSearchBar => {
-    const response = await youtube.get("/search", {
-      params: {
-        q: termFromSearchBar
-      }
-    });
-    this.setState({
-      videos: response.data.items
-    });
+  handleSetVideo = async () => {
+    let videoList = await videoService.getVidList();
+
+    console.log(this.state.videos);
   };
 
-  handleSelVideo = video => {
-    this.setState({ selVideo: video });
+  handleSearch = async (e, query) => {
+    e.preventDefault();
+    let search = await videoService.searchYoutube(query);
+    this.setState({
+      videos: search
+    });
+    console.log(search);
   };
 
   render() {
@@ -39,32 +45,35 @@ class App extends Component {
       <div>
         <NavBar
           user={this.state.user}
-          handleFormSubmit={this.handleFormSubmit}
+          handleSearch={this.handleSearch}
+          handleChange={this.handleChange}
+          term={this.state.term}
         />
-
-        <div>
-          <VideoList
-            handleSelVideo={this.handleSelVideo}
-            videos={this.state.videos}
+        <Switch>
+          <Route
+            exact
+            path="/videos"
+            render={() => <VideoList videos={this.state.videos} />}
           />
-        </div>
-        <Route
-          exact
-          path="/signup"
-          render={({ history }) => (
-            <SignupPage history={history} signUp={this.handleSignupOrLogin} />
-          )}
-        />
-        <Route
-          exact
-          path="/login"
-          render={({ history }) => (
-            <LoginPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
-            />
-          )}
-        />
+          <Route
+            exact
+            path="/signup"
+            render={({ history }) => (
+              <SignupPage history={history} signUp={this.handleSignupOrLogin} />
+            )}
+          />
+          <Route
+            exact
+            path="/login"
+            render={({ history }) => (
+              <LoginPage
+                history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            )}
+          />
+          <Route exact path="/" />
+        </Switch>
       </div>
     );
   }
