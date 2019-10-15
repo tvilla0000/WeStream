@@ -22,7 +22,7 @@ async function getVideos(req, res) {
     ).then(res => res.json())
   );
   const vidList = await Promise.all(mapVids);
-  res.json(vidList);
+  return res.json(vidList);
 }
 
 async function getSingleVideo(req, res) {
