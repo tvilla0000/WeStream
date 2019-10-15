@@ -5,7 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(29, 29, 29);
+  /* background-color: rgb(29, 29, 29);
+   */
+  background: rgb(176, 174, 174);
+  color: gray;
 }
 
 code {
@@ -17,18 +20,21 @@ a {
   color: white;
 }
 
-/*-- NavBar --*/
-/* .NavBar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 20px;
-  background-color: rgb(30, 29, 29);
-  height: 6vh;
-} */
-
 .NavBar-link {
   margin: 0 10px;
+}
+
+.form-control {
+  width: 30vw;
+  background-color: rgb(36, 36, 36);
+  margin: 20px 0;
+  height: 5vh;
+  border: none;
+  border: 0.125px solid rgb(42, 42, 42);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  color: gray;
 }
 
 .NavBar-welcome {
@@ -36,17 +42,15 @@ a {
 }
 
 .nav {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: center; */
-  /* align-items: baseline; */
-  background-color: rgb(36, 36, 36);
+  /* background-color: rgb(36, 36, 36);
+   */
+  background-color: rgb(116, 116, 116);
   padding: 10px;
   position: relative;
-  height: 5vh;
+  height: 6vh;
 }
 .auth {
-  width: 8vw;
+  width: 12vw;
   position: absolute;
   right: 10px;
   top: 33px;
@@ -66,13 +70,13 @@ a {
 /*-- SearchBar --*/
 .Search {
   position: absolute;
-  left: 32.5%;
-  top: 20px;
+  left: 28%;
+  top: 18px;
 }
 
 #searchbar {
-  width: 30vw;
-  height: 20px;
+  width: 38vw;
+  height: 25px;
   background-color: rgb(19, 19, 19);
   border: 0.125px solid rgb(42, 42, 42);
   color: white;
@@ -81,11 +85,10 @@ a {
 }
 
 #submit {
-  height: 40px;
+  height: 45px;
   border: 0.125px solid rgb(42, 42, 42);
   background-color: rgb(57, 57, 57);
   border-left: none;
-  color: white;
   font-size: 15px;
   padding: 5px;
   width: 4vw;
@@ -96,6 +99,14 @@ a {
   align-items: center;
 }
 
+#search-icon {
+  color: rgb(116, 116, 116);
+}
+
+#search-icon:hover {
+  color: rgb(176, 174, 174);
+}
+
 /*-- SignupPage --*/
 
 .SignupPage {
@@ -104,6 +115,23 @@ a {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+}
+
+.header-footer {
+  font-size: 40px;
+}
+
+.btn {
+  width: 5vw;
+  height: 4vh;
+  background-color: rgb(36, 36, 36);
+  border: 0.125px solid rgb(42, 42, 42);
+  font-size: 15px;
+  color: gray;
+}
+
+.signup-form {
+  margin: -15vh 0;
 }
 
 /*-- LoginPage --*/

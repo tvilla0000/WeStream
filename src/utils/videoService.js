@@ -24,7 +24,7 @@ async function getVideo(videoId) {
   return await fetch(`/api/videos/video`, options).then(res => res.json());
 }
 
-async function getVidList() {
+async function getVidlist() {
   const options = {
     method: "POST",
     headers: {

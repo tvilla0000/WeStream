@@ -29,4 +29,4 @@ function getUserFromToken() {
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 }
 
-export { setToken, getToken, getUserFromToken, removeToken };
+export default { setToken, getToken, getUserFromToken, removeToken };
