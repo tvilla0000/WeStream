@@ -5,7 +5,7 @@ class VideoView extends Component {
   render() {
     return (
       <div>
-        <Video />
+        <Video videos={this.props.videos} />
       </div>
     );
   }

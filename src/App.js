@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import NavBar from "./components/Main Components/NavBar";
+import NavBar from "./components/MainComponents/NavBar";
 import { Route, Switch } from "react-router-dom";
 import LoginPage from "./components/Auth/LoginPage";
 import SignupPage from "./components/Auth/SignupPage";
 import userService from "./utils/userService";
-import VideoList from "./components/Main Components/VideoList";
+import VideoList from "./components/MainComponents/VideoList";
 import videoService from "./utils/videoService";
+import VideoView from "./Pages/VideoView";
 
 class App extends Component {
   state = {
@@ -23,12 +24,6 @@ class App extends Component {
 
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
-  };
-
-  handleSetVideo = async () => {
-    let videoList = await videoService.getVidList();
-
-    console.log(this.state.videos);
   };
 
   handleSearch = async (e, query) => {
@@ -52,9 +47,17 @@ class App extends Component {
         <Switch>
           <Route
             exact
-            path="/videos"
+            path="/"
             render={() => <VideoList videos={this.state.videos} />}
           />
+
+          <Route
+            exact
+            // path={`/videos/:videoId`}
+            path="/"
+            render={({ videos }) => <VideoView videos={videos} />}
+          />
+
           <Route
             exact
             path="/signup"

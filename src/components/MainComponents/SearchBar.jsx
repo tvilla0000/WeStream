@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MaterialIcon, { colorPalette } from "material-icons-react";
-
+import { Redirect } from "react-router-dom";
 class SearchBar extends Component {
   state = {
     term: ""

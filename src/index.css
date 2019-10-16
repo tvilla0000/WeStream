@@ -5,9 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: rgb(29, 29, 29);
-   */
-  background: rgb(176, 174, 174);
+  background-color: rgb(29, 29, 29);
   color: gray;
 }
 
@@ -18,6 +16,7 @@ code {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 .NavBar-link {
@@ -33,7 +32,7 @@ a {
   border: 0.125px solid rgb(42, 42, 42);
   border-radius: 5px;
   padding: 10px;
-  font-size: 15px;
+  font-size: 28px;
   color: gray;
 }
 
@@ -42,18 +41,16 @@ a {
 }
 
 .nav {
-  /* background-color: rgb(36, 36, 36);
-   */
-  background-color: rgb(116, 116, 116);
+  background-color: rgb(36, 36, 36);
   padding: 10px;
   position: relative;
-  height: 6vh;
+  height: 4vh;
 }
 .auth {
   width: 12vw;
   position: absolute;
   right: 10px;
-  top: 33px;
+  top: 22px;
 }
 
 #brand {
@@ -62,7 +59,7 @@ a {
   display: flex;
   align-items: center;
   width: 40px;
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 10px;
   position: absolute;
   left: 80px;
 }
@@ -70,13 +67,13 @@ a {
 /*-- SearchBar --*/
 .Search {
   position: absolute;
-  left: 28%;
-  top: 18px;
+  left: 31.5%;
+  top: 10px;
 }
 
 #searchbar {
-  width: 38vw;
-  height: 25px;
+  width: 32vw;
+  height: 18px;
   background-color: rgb(19, 19, 19);
   border: 0.125px solid rgb(42, 42, 42);
   color: white;
@@ -85,7 +82,7 @@ a {
 }
 
 #submit {
-  height: 45px;
+  height: 38px;
   border: 0.125px solid rgb(42, 42, 42);
   background-color: rgb(57, 57, 57);
   border-left: none;
@@ -105,6 +102,10 @@ a {
 
 #search-icon:hover {
   color: rgb(176, 174, 174);
+}
+
+.NavBar-welcome {
+  color: white;
 }
 
 /*-- SignupPage --*/
@@ -131,7 +132,7 @@ a {
 }
 
 .signup-form {
-  margin: -15vh 0;
+  margin: 10vh 0;
 }
 
 /*-- LoginPage --*/
@@ -141,4 +142,42 @@ a {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  margin: 10vh 0;
+}
+
+.Videos {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  margin: 0 auto;
+  margin-top: 10vh;
+  width: 55vw;
+}
+
+.Video {
+  height: 25vh;
+  width: 45vw;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.details {
+  margin: 0 0 0 10px;
+}
+
+.channel-name {
+  color: gray;
+  font-size: 15px;
+}
+
+.no-videos {
+  text-align: center;
+  margin: 10vh;
+}
+
+.description {
+  font-size: 15px;
+  color: gray;
+  margin: 10px 0 0 0;
 }

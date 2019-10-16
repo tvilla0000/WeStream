@@ -14,14 +14,16 @@ class NavBar extends Component {
   render() {
     let nav = this.props.user ? (
       <div className="nav">
-        <div id="brand">
-          <img
-            src="https://i.imgur.com/Cw3uIAO.png"
-            style={{ width: "2vw", height: "3vh" }}
-            alt="WeStream Logo"
-          />
-          <label>WeStream</label>
-        </div>
+        <Link to="/">
+          <div id="brand">
+            <img
+              src="https://i.imgur.com/Cw3uIAO.png"
+              style={{ width: "1.25vw", height: "3vh" }}
+              alt="WeStream Logo"
+            />
+            <label>WeStream</label>
+          </div>
+        </Link>
         <SearchBar
           handleSearch={this.props.handleSearch}
           handleChange={this.props.handleChange}
@@ -43,7 +45,7 @@ class NavBar extends Component {
           <div id="brand">
             <img
               src="https://i.imgur.com/Cw3uIAO.png"
-              style={{ width: "1.5vw", height: "3.5vh" }}
+              style={{ width: "1.25vw", height: "3vh" }}
               alt="WeStream Logo"
             />
             <label>WeStream</label>

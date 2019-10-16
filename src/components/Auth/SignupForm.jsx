@@ -42,7 +42,9 @@ class SignupForm extends Component {
   render() {
     return (
       <div className="signup-form">
-        <header className="header-footer">Sign Up</header>
+        <header className="header-footer" style={{ textAlign: "center" }}>
+          Sign Up
+        </header>
         <form className="form-horizontal" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <div className="col-sm-12">
