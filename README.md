@@ -17,7 +17,7 @@
 ### Video List
 <br>
 
-![Video Page](blob:https://imgur.com/a347cdda-dbe4-416e-a379-09975ba950ad "Video Page")
+![Video Page](https://imgur.com/6QAwrFz "Video Page")
 <br>
 ### Video Page
 <br>
