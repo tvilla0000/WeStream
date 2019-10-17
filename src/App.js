@@ -7,7 +7,7 @@ import SignupPage from "./components/Auth/SignupPage";
 import userService from "./utils/userService";
 import VideoList from "./components/MainComponents/VideoList";
 import videoService from "./utils/videoService";
-import VideoView from "./components/MainComponents/VideoView";
+// import VideoView from "./components/MainComponents/VideoView";
 import Video from "./components/MainComponents/Video";
 
 class App extends Component {
@@ -69,8 +69,9 @@ class App extends Component {
           />
 
           <Route
-            path={`/videos/watch`}
-            render={() => <Video videos={this.state.videos} />}
+            exact
+            path={`/videos/:videoId`}
+            render={() => <Video {...this.props} />}
           />
 
           <Route
