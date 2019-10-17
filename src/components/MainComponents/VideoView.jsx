@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Video from "../components/MainComponents/Video";
+import Video from "./Video";
 class VideoView extends Component {
   state = {};
   render() {

@@ -34,9 +34,7 @@ class NavBar extends Component {
             LOG OUT
           </Link>
           &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <span className="NavBar-welcome">
-            Welcome, {this.props.user.name}
-          </span>
+          <span className="NavBar-welcome">{this.props.user.name}</span>
         </div>
       </div>
     ) : (
