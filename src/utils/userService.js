@@ -1,5 +1,4 @@
 const BASE_URL = "/api/users/";
-const tokenService = require("./tokenService");
 
 function signup(user) {
   return fetch(BASE_URL + "signup", {

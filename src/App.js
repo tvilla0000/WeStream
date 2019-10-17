@@ -7,15 +7,14 @@ import SignupPage from "./components/Auth/SignupPage";
 import userService from "./utils/userService";
 import VideoList from "./components/MainComponents/VideoList";
 import videoService from "./utils/videoService";
-// import VideoView from "./components/MainComponents/VideoView";
-import Video from "./components/MainComponents/Video";
+import VideoView from "./components/MainComponents/VideoView";
 
 class App extends Component {
   state = {
     user: userService.getUser(),
     videos: [],
-    term: "",
-    selectedVidId: ""
+    videoDetail: "",
+    term: ""
   };
 
   handleChange = e => {
@@ -28,23 +27,13 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   };
 
-  handleSearch = async (e, query) => {
+  handleSearch = async (e, query, videoId) => {
     e.preventDefault();
     let search = await videoService.searchYoutube(query);
     this.setState({
-      videos: search,
-      selectedVidId: search
+      videos: search
     });
-    console.log(search.items);
   };
-
-  // handleVideoId = async videoId => {
-  //   this.setState({
-  //     selectedVidId: videoId
-  //   });
-  //   videoId = await videoService.getVideo(videoId).then(res => res.json());
-  //   console.log(videoId);
-  // };
 
   render() {
     return (
@@ -55,22 +44,19 @@ class App extends Component {
           handleChange={this.handleChange}
           term={this.state.term}
         />
-        {/* <Video videos={this.handleVideoId} /> */}
+
         <Switch>
           <Route
             exact
             path="/"
-            render={() => (
-              <VideoList
-                videos={this.state.videos}
-                handleVideoId={this.handleVideoId}
-              />
-            )}
+            render={() => <VideoList videos={this.state.videos} />}
           />
 
           <Route
             path={`/videos/:videoId`}
-            render={props => <Video {...props} />}
+            render={props => (
+              <VideoView {...props} videos={this.state.videos} />
+            )}
           />
 
           <Route

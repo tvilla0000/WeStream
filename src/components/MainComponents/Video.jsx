@@ -3,14 +3,14 @@ import ReactPlayer from "react-player";
 
 class Video extends Component {
   render() {
-    console.log(this.props);
     return (
-      <div>
+      <div className="ReactPlayer">
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${this.props.match.params.videoId}`}
           controls={true}
-          width={1000}
+          width={900}
           height={550}
+          className="reactplayer"
         />
       </div>
     );

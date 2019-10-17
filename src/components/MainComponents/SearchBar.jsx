@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import MaterialIcon, { colorPalette } from "material-icons-react";
-import { Redirect } from "react-router-dom";
+import MaterialIcon from "material-icons-react";
+
 class SearchBar extends Component {
   state = {
     term: ""
@@ -11,7 +11,6 @@ class SearchBar extends Component {
       term: e.target.value
     });
   };
-  handleSubmit(e) {}
 
   render() {
     return (

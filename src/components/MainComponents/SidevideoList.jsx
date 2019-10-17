@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class VideoList extends Component {
+class SidevideoList extends Component {
   render() {
     return (
-      <div className="Videos">
+      <div className="sidevideos">
         {this.props.videos.items ? (
           this.props.videos.items.map((video, idx) => {
             return (
               <div key={idx}>
-                <Link to={`videos/${video.id.videoId}`}>
-                  <div className="Video" key={idx}>
+                <Link to={`/videos/${video.id.videoId}`}>
+                  <div className="sidevideo" key={idx}>
                     <div>
                       <img
                         src={video.snippet.thumbnails.medium.url}
@@ -22,9 +22,6 @@ class VideoList extends Component {
                       <div className="channel-name">
                         {video.snippet.channelTitle}
                       </div>
-                      <div className="description">
-                        {video.snippet.description}
-                      </div>
                     </div>
                   </div>
                 </Link>
@@ -32,8 +29,8 @@ class VideoList extends Component {
             );
           })
         ) : (
-          <div className="no-videos">
-            <h1>No Videos Yet ¯\_(ツ)_/¯...</h1>
+          <div className="side-no-videos">
+            <h1>No Results</h1>
           </div>
         )}
       </div>
@@ -41,4 +38,4 @@ class VideoList extends Component {
   }
 }
 
-export default VideoList;
+export default SidevideoList;

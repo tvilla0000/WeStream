@@ -27,6 +27,7 @@ class NavBar extends Component {
         <SearchBar
           handleSearch={this.props.handleSearch}
           handleChange={this.props.handleChange}
+          // handleVideoDetails={this.props.handleVideoDetails}
           term={this.props.term}
         />
         <div className="auth">
