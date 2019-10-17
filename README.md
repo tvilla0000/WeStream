@@ -7,7 +7,7 @@
 ### Login Page
 <br>
 
-![Sign Up Page](blob:https://imgur.com/8170acba-20dc-4a28-99cb-3a3657e3a02c "Sign up Page")
+![Sign Up Page](https://imgur.com/8170acba-20dc-4a28-99cb-3a3657e3a02c "Sign up Page")
 <br>
 ### Sign Up Page
 <br>
