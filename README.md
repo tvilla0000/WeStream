@@ -11,17 +11,18 @@
 
 # Technologies Used:
 <br>
+
 - React
 - Javascript
 - CSS
 - JSX
 - MongoDB
 - Mongoose
+- Express
 - NPM
 - Youtube API
 
 <br>
-
 # NPM Packages Used:
 <br>
 
@@ -29,8 +30,9 @@
 - react-player
 - bcrypt
 - node-fetch (Api calls)
-
+<br>
 # Ice Box/Stretch Goals:
+<br>
 - Implement more restrictions against non-users 
 - Implement CRUD for Comments
 - Implement a better way of setting data based off of Youtube's API
