@@ -9,8 +9,32 @@
 ![Video Page](https://i.imgur.com/6QAwrFz.png "Video Page")
 
 
-# Technologies
+# Technologies Used:
 <br>
+- React
+- Javascript
+- CSS
+- JSX
+- MongoDB
+- Mongoose
+- NPM
+- Youtube API
+
+<br>
+
+# NPM Packages Used:
+<br>
+
+- react-router-dom
+- react-player
+- bcrypt
+- node-fetch (Api calls)
+
+# Ice Box/Stretch Goals:
+- Implement more restrictions against non-users 
+- Implement CRUD for Comments
+- Implement a better way of setting data based off of Youtube's API
+
 
 
 
