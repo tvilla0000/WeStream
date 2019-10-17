@@ -8,12 +8,14 @@ import userService from "./utils/userService";
 import VideoList from "./components/MainComponents/VideoList";
 import videoService from "./utils/videoService";
 import VideoView from "./Pages/VideoView";
+import Video from "./components/MainComponents/Video";
 
 class App extends Component {
   state = {
     user: userService.getUser(),
     videos: [],
-    term: ""
+    term: "",
+    selectedVidId: ""
   };
 
   handleChange = e => {
@@ -32,7 +34,14 @@ class App extends Component {
     this.setState({
       videos: search
     });
-    console.log(search);
+  };
+
+  handleVideoId = async videoId => {
+    this.setState({
+      selectedVidId: videoId
+    });
+    videoId = await videoService.getVideo(videoId).then(res => res.json());
+    console.log(videoId);
   };
 
   render() {
@@ -44,18 +53,22 @@ class App extends Component {
           handleChange={this.handleChange}
           term={this.state.term}
         />
+        {/* <Video videos={this.handleVideoId} /> */}
         <Switch>
           <Route
             exact
             path="/"
-            render={() => <VideoList videos={this.state.videos} />}
+            render={() => (
+              <VideoList
+                videos={this.state.videos}
+                handleVideoId={this.handleVideoId}
+              />
+            )}
           />
 
           <Route
-            exact
-            // path={`/videos/:videoId`}
-            path="/"
-            render={({ videos }) => <VideoView videos={videos} />}
+            path={`/videos/${this.state.videosId}`}
+            render={() => <VideoView videos={this.props.videos} />}
           />
 
           <Route

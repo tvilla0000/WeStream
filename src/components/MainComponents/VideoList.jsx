@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 
 class VideoList extends Component {
   render() {
+    console.log(this.props.handleVideoId);
     return (
       <div className="Videos">
         {this.props.videos.items ? (
           this.props.videos.items.map((video, idx) => {
             return (
-              <div>
+              <div
+                onClick={() => {
+                  this.props.handleVideoId(video);
+                }}
+              >
                 <Link to={`videos/${video.id.videoId}`}>
                   <div className="Video" key={idx}>
                     <div>
