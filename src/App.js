@@ -69,9 +69,8 @@ class App extends Component {
           />
 
           <Route
-            exact
             path={`/videos/:videoId`}
-            render={() => <Video {...this.props} />}
+            render={props => <Video {...props} />}
           />
 
           <Route
