@@ -22,7 +22,7 @@
 - NPM
 - Youtube API
 
-<br>
+
 # NPM Packages Used:
 <br>
 
@@ -30,7 +30,7 @@
 - react-player
 - bcrypt
 - node-fetch (Api calls)
-<br>
+
 # Ice Box/Stretch Goals:
 <br>
 - Implement more restrictions against non-users 
